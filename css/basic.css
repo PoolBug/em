@@ -1,0 +1,12 @@
+body {
+	padding-bottom: 40px;
+	background-color: #f5f5f5;
+	text-align: center;
+}
+
+.nav .btn {
+	float: right;
+	margin: 0px !important;
+	right: 3em;
+	position: relative;
+}
