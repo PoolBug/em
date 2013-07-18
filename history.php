@@ -13,7 +13,6 @@
 <head>
 	<title>Images You Make before</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" >
-	<script type="test/javascript" src="js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/history.css" />
 	<link rel="stylesheet" href="css/basic.css" />
@@ -35,7 +34,7 @@
 				  <li><a href="help.html" target="_blank">Help</a></li>
 				  <li><a href="#">Contact Us</a></li>
 				</ul>
-				<div class="btn"><a href="">Sign out</a></div>
+				<div class="btn"><a href="server/php/logout.php">Sign out</a></div>
             </div>
         </div>
     </div>
@@ -49,7 +48,7 @@
 			<?php 
 				$conn = @mysql_connect("localhost","root","");
 				if (!$conn){
-					die("������ݿ�ʧ�ܣ�" . mysql_error());
+					die("Fail to connect database. Error:" . mysql_error());
 				}
 				
 				mysql_query( 'SET NAMES UTF8' ); 
@@ -61,7 +60,7 @@
 				$img_info = mysql_fetch_array( $imgs_resource );
 				while( $img_info )
 				{
-					$img_path = "backstage/users/" . $u_id . "/result/" . $img_info["img_id"] . ".jpg";
+					$img_path = "server/php/users/" . $u_id . "/result/" . $img_info["img_id"] . ".jpg";
 					$content = $img_info["content"];
 			?>
 				
@@ -69,8 +68,8 @@
 			    <div class="thumbnail">
 			      <img src="<?= $img_path ?>" />
 			      <textarea disabled="disabled" rows="3"><?= $content ?></textarea><br />
-			      <button class="btn">Edit</button>
-			      <button class="btn">Destroy</button>
+			      <a href="server/php/editImageDescription.php?image_id=<?=$img_info['img_id'] ?>"><button class="btn">Edit</button></a>
+			      <button class="btn" onclick="destroyResultImage(<?=$img_info['img_id'] ?>);">Destroy</button>
 			    </div>
 			  </li>
 	
@@ -93,6 +92,8 @@
 		mysql_select_db("em", $conn);
 	}
 ?>
-	
+<script src="js/history.js"></script>
+<script src="js/jquery.min.js"></script>
+
 </body>
 </html>

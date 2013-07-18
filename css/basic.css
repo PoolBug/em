@@ -10,3 +10,7 @@ body {
 	right: 3em;
 	position: relative;
 }
+
+h1 {
+	margin-top: 2em !important;
+}
