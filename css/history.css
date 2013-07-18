@@ -19,3 +19,16 @@
 	height: 300px;
 	margin-bottom: 5px;
 }
+
+#myCarousel {
+	height: 400px;
+	width: 500px;
+	text-align:center;
+	margin: 1em auto 0;
+	padding:1em;
+}
+
+#myCarousel img {
+	margin: 0 auto;
+	height:400px;
+}	
