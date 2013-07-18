@@ -106,7 +106,7 @@
                     <i class="icon-upload icon-white"></i>
                     <span>Start upload</span>
                 </button>
-                <button id="merge_btn" type="button" class="btn btn-warning merge" >
+                <button id="merge_btn" type="button" class="btn btn-warning merge" data-loading-text="Processing...">
                     <i class="icon-play-circle icon-white"></i>
                     <span>Merge Image</span>
                 </button>

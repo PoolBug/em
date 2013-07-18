@@ -7,7 +7,7 @@ window.onload = function() {
 			return false;
 		}
 		//$("button.destroy").click();
-	/*	$.ajax({
+		/*$.ajax({
 			type:"post",
 			url:"server/php/MergeImages.php",
 			dataType:"json",
@@ -27,11 +27,14 @@ window.onload = function() {
 		});
 		//alert("all image destroy.");
 		*/
+		$("button.merge").button("loading");
+		$("button").attr("disabled", "disabled");
 		location.href = "server/php/MergeImages.php";
 	});
 	$("button.cancel").click( function() {
 		$("button.destroy").click();
 	});
+	
 	//$("button.cancel").click();
 };
 

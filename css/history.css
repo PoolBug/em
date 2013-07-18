@@ -37,6 +37,10 @@
 	background-color:red;
 }
 
+#myCarousel .carousel-indicators li:hover{
+	cursor: pointer;
+}
+
 #myCarousel .carousel-indicators .active {
 	background-color:white;
 }
