@@ -16,12 +16,13 @@
 
       <form class="form-signin" method="post" enctype="multipart/form-data" action='server/php/loginUser.php'>
         <h2 class="form-signin-heading">Please sign in</h2>
-        <input class="input-block-level" placeholder="User Name" type="text">
-        <input class="input-block-level" placeholder="Password" type="password">
+        <input name="userName" class="input-block-level" placeholder="User Name" type="text">
+        <input name="userPwd" class="input-block-level" placeholder="Password" type="password">
  
-        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <button class="btn btn-large btn-primary" id="submit">Sign in</button>
         <a class="btn btn-large btn-primary" href="register.html">Register</a>
       </form>
+	  <div id="error_msg"></div>
 
     </div> <!-- /container -->
 
@@ -29,7 +30,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
 	</body>
 
 </html>

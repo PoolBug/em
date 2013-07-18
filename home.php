@@ -65,7 +65,7 @@
 				  <li><a href="help.html" target="_blank">Help</a></li>
 				  <li><a href="#">Contact Us</a></li>
 				</ul>
-				<div class="btn"><a href="">Sign out</a></div>
+				<a class="btn" href="server/php/logout.php">Sign out</a>
             </div>
         </div>
     </div>
@@ -93,7 +93,7 @@
     <form id="fileupload" action="server/php/uploadFile.php" method="POST" enctype="multipart/form-data" data-ng-app="demo" data-ng-controller="DemoFileUploadController" data-file-upload="options" data-ng-class="{'fileupload-processing': processing() || loadingFiles}">
         <!-- Redirect browsers with JavaScript disabled to the origin page -->
         <noscript><input type="hidden" name="redirect" value="http://blueimp.github.io/jQuery-File-Upload/"></noscript>
-        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
+        <!-- The fileupload-buttonbar contains buttons to add/delete files and start/merge the upload -->
         <div class="row fileupload-buttonbar">
             <div class="span7">
                 <!-- The fileinput-button span is used to style the file input field as button -->
@@ -106,9 +106,13 @@
                     <i class="icon-upload icon-white"></i>
                     <span>Start upload</span>
                 </button>
-                <button type="button" class="btn btn-warning cancel" data-ng-click="cancel()">
+                <button id="merge_btn" type="button" class="btn btn-warning merge" >
                     <i class="icon-play-circle icon-white"></i>
                     <span>Merge Image</span>
+                </button>
+				<button type="button" class="btn btn-warning cancel" >
+                    <i class="icon-ban-circle icon-white"></i>
+                    <span>Delete All</span>
                 </button>
                 <!-- The loading indicator is shown during file processing -->
                 <div class="fileupload-loading"></div>
@@ -122,7 +126,7 @@
             </div>
         </div>
         <!-- The table listing the files available for upload/download -->
-        <table class="table table-striped files ng-cloak">
+        <table class="table table-striped files ng-cloak" >
             <tr data-ng-repeat="file in queue">
                 <td data-ng-switch data-on="!!file.thumbnailUrl">
                     <div class="preview" data-ng-switch-when="true">
@@ -185,6 +189,9 @@
     <ol class="indicator"></ol>
 </div>
 <script src="js/jquery.js"></script>
+
+<script src="js/home.js"></script>
+
 <script src="js/angular.min.js"></script>
 <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="js/vendor/jquery.ui.widget.js"></script>
@@ -215,5 +222,6 @@
 <script src="js/jquery.fileupload-angular.js"></script>
 <!-- The main application script -->
 <script src="js/app.js"></script>
+
 </body> 
 </html>
