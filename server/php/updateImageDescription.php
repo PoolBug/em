@@ -46,8 +46,9 @@ function updateDiscription($image_id, $content)
 	//echo $image_id, $content, $cmd;
 	//var_dump( $result );
 	if( $result )
-		echo "描述成功！","<meta http-equiv='refresh' content='1; url=../../history.php' >";
+		echo "<h1>恭喜！描述成功</h1>","<meta http-equiv='refresh' content='1; url=../../history.php' >";
 	else
-		exit('描述失败<a href="javascript:history.back(-1);">返回</a>');
+		exit('<h1>对不起！添加描述失败<a href="javascript:history.back(-1);">返回</a></h1>');
 }
 ?>
+<link rel="stylesheet" href="css/basic.css" />

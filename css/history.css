@@ -29,6 +29,14 @@
 }
 
 #myCarousel img {
-	margin: 0 auto;
+	margin: 0 auto 0;
 	height:400px;
 }	
+
+#myCarousel .carousel-indicators li{
+	background-color:red;
+}
+
+#myCarousel .carousel-indicators .active {
+	background-color:white;
+}
